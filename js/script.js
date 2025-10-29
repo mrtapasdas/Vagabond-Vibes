@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Sticky Header
-    const header = document.querySelector('.header');
+    const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -9,57 +9,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Mobile Menu
-    const hamburger = document.querySelector('.hamburger');
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+    // Show menu
+    navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        // Change toggle icon
+        navToggle.innerHTML = navMenu.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
     });
 
-    // Lazy Loading Images
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                lazyImageObserver.unobserve(img);
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
     });
-
-    lazyImages.forEach(img => {
-        lazyImageObserver.observe(img);
-    });
-
-    // Contact Form Submission (using Formspree)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            
-            try {
-                const response = await fetch('https://formspree.io/f/your-form-id', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    alert('Thanks for your submission!');
-                    contactForm.reset();
-                } else {
-                    alert('Oops! There was a problem submitting your form.');
-                }
-            } catch (error) {
-                alert('Oops! There was a problem submitting your form.');
-            }
-        });
-    }
 });
