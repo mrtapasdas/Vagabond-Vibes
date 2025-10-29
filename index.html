@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagabond Vibes - Andaman Tour Packages</title>
-    <meta name="description" content="Explore the best of Andaman with Vagabond Vibes. We offer customized tour packages including flights, hotels, and activities. Book your dream Andaman holiday today!">
+    
+    <!-- SEO Meta Tags -->
+    <title>Vagabond Vibes - Modern Andaman Tour Packages</title>
+    <meta name="description" content="Discover breathtaking Andaman tour packages with Vagabond Vibes. We craft personalized, luxury travel experiences including flights, hotels, and unique adventures.">
     <meta name="keywords" content="Andaman tour packages, Andaman travel agency, Andaman honeymoon tour, Port Blair sightseeing, Havelock Island trip, Andaman travel guide, Andaman family package, Andaman tourism, Vagabond Vibes Andaman tours">
     <meta name="author" content="Vagabond Vibes">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Vagabond Vibes - Your Gateway to Andaman">
-    <meta property="og:description" content="Customized Andaman & Nicobar tour packages.">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://your-domain.com">
+    <!-- Open Graph Meta for Social Sharing -->
+    <meta property="og:title" content="Vagabond Vibes | Where Every Journey Feels Like Paradise">
+    <meta property="og:description" content="Curated tour packages that turn your Andaman island dreams into reality.">
+    <meta property="og:image" content="images/og-preview.jpg">
+    <meta property="og:url" content="https://your-website-url.com">
     <meta property="og:type" content="website">
 
     <!-- Favicon -->
@@ -21,119 +23,171 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icon Library (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- CSS -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preload Hero Image for Performance -->
+    <link rel="preload" fetchpriority="high" as="image" href="images/hero-background.jpg" type="image/jpeg">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <!-- Header Section -->
+    <header id="header">
+        <nav class="container">
             <a href="index.html" class="nav-logo">Vagabond Vibes</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <a href="contact.html" class="btn nav-btn">Get a Quote</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Explore Andaman with Vagabond Vibes</h1>
-            <p class="hero-subtitle">Curated tour packages that turn your island dreams into reality.</p>
-            <div class="hero-buttons">
-                <a href="packages.html" class="btn btn-primary">Explore Packages</a>
-                <a href="contact.html" class="btn btn-secondary">Get a Free Quote</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/your-whatsapp-number" class="whatsapp-float" target="_blank">
-        <img src="images/whatsapp-icon.svg" alt="Chat on WhatsApp">
-    </a>
-
-    <!-- Featured Packages Section -->
-    <section class="featured-packages">
-        <h2 class="section-title">Popular Tour Packages</h2>
-        <div class="packages-grid">
-            <!-- Package Card 1 -->
-            <div class="package-card">
-                <img src="images/andaman-1.jpg" alt="Andaman Honeymoon Package" class="package-image">
-                <div class="package-info">
-                    <h3 class="package-title">Andaman Honeymoon Special</h3>
-                    <p class="package-duration">6 Days / 5 Nights</p>
-                    <p class="package-price">Starting from $499</p>
-                    <a href="#" class="btn btn-details">View Details</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1 class="hero-title">Explore Andaman with Vagabond Vibes</h1>
+                <p class="hero-tagline">Where Every Journey Feels Like Paradise</p>
+                
+                <!-- Modern Search Form -->
+                <div class="hero-search-form">
+                    <form action="#">
+                        <div class="form-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" placeholder="Where to? (e.g., Havelock)" aria-label="Destination">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Travel Dates" aria-label="Travel Dates">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-users"></i>
+                            <select aria-label="Number of Guests">
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                                <option>5+ Guests</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn form-btn">Search</button>
+                    </form>
                 </div>
             </div>
-            <!-- Package Card 2 -->
-            <div class="package-card">
-                <img src="images/andaman-2.jpg" alt="Andaman Family Fun" class="package-image">
-                <div class="package-info">
-                    <h3 class="package-title">Andaman Family Fun</h3>
-                    <p class="package-duration">5 Days / 4 Nights</p>
-                    <p class="package-price">Starting from $399</p>
-                    <a href="#" class="btn btn-details">View Details</a>
-                </div>
-            </div>
-            <!-- Package Card 3 -->
-            <div class="package-card">
-                <img src="images/andaman-3.jpg" alt="Andaman Adventure Trip" class="package-image">
-                <div class="package-info">
-                    <h3 class="package-title">Andaman Adventure Trip</h3>
-                    <p class="package-duration">7 Days / 6 Nights</p>
-                    <p class="package-price">Starting from $599</p>
-                    <a href="#" class="btn btn-details">View Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2 class="section-title">What Our Clients Say</h2>
-        <div class="testimonial-carousel">
-            <div class="testimonial">
-                <p>"An unforgettable experience! Vagabond Vibes planned our Andaman trip perfectly. Highly recommended!"</p>
-                <h4>- Sarah & Tom</h4>
+        <!-- Featured Packages Section -->
+        <section class="packages section">
+            <div class="container">
+                <span class="section-subtitle">Our Best Tours</span>
+                <h2 class="section-title">Featured Andaman Packages</h2>
+                <div class="packages-grid">
+                    <!-- Package Card 1 -->
+                    <div class="package-card">
+                        <img src="images/package-1.jpg" alt="Romantic getaway in the Andaman Islands" class="package-card-img" loading="lazy">
+                        <div class="package-card-content">
+                            <h3>Andaman Honeymoon Bliss</h3>
+                            <p class="duration"><i class="far fa-clock"></i> 5 Days / 4 Nights</p>
+                            <div class="price-box">
+                                <p>From</p>
+                                <span>$799</span>
+                            </div>
+                            <a href="#" class="btn card-btn">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Package Card 2 -->
+                    <div class="package-card">
+                        <img src="images/package-2.jpg" alt="Family vacation in the Andaman Islands" class="package-card-img" loading="lazy">
+                        <div class="package-card-content">
+                            <h3>Andaman Family Adventure</h3>
+                            <p class="duration"><i class="far fa-clock"></i> 6 Days / 5 Nights</p>
+                            <div class="price-box">
+                                <p>From</p>
+                                <span>$950</span>
+                            </div>
+                            <a href="#" class="btn card-btn">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Package Card 3 -->
+                    <div class="package-card">
+                        <img src="images/package-3.jpg" alt="Luxury escape to the Andaman Islands" class="package-card-img" loading="lazy">
+                        <div class="package-card-content">
+                            <h3>Luxury Andaman Escape</h3>
+                            <p class="duration"><i class="far fa-clock"></i> 7 Days / 6 Nights</p>
+                            <div class="price-box">
+                                <p>From</p>
+                                <span>$1250</span>
+                            </div>
+                            <a href="#" class="btn card-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="testimonial">
-                <p>"The best travel agency for Andaman tours. Everything was seamless, from flights to local tours."</p>
-                <h4>- The Sharma Family</h4>
-            </div>
-        </div>
-    </section>
-    
+        </section>
+        
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+             <div class="container">
+                 <h2>Ready for your next adventure?</h2>
+                 <p>Let us craft the perfect Andaman getaway for you. Get a free, no-obligation quote today!</p>
+                 <a href="contact.html" class="btn cta-btn">Get My Free Quote</a>
+             </div>
+        </section>
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="packages.html">Packages</a>
-                <a href="contact.html">Contact</a>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>Vagabond Vibes</h3>
+                <p>Curating unforgettable journeys to the Andaman paradise. Flights, hotels, transfers, and activities all in one place.</p>
             </div>
-            <div class="footer-social">
-                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="packages.html">Tour Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
             </div>
-            <p>&copy; 2025 Vagabond Vibes | Designed by Tapas Das</p>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
+                <p><i class="fas fa-envelope"></i> itsvagabondvibes@gmail.com</p>
+                <p><i class="fas fa-phone"></i> Call for Best Deals!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy; 2025 Vagabond Vibes | Designed by Tapas Das</p>
         </div>
     </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
