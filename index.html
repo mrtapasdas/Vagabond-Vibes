@@ -1,267 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0f6b73" />
-  <title>Vagabond Vibes — Tours & Travel</title>
-  <meta name="description" content="Vagabond Vibes — curated tours, custom travel packages, and unforgettable adventures. Fast, reliable, and personalized travel experiences." />
-  <meta name="keywords" content="vagabond vibes, tours, travel agency, travel packages, holiday packages, adventure travel" />
-  <link rel="canonical" href="https://your-domain.example/" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Vagabond Vibes" />
-  <meta property="og:title" content="Vagabond Vibes — Tours & Travel" />
-  <meta property="og:description" content="Curated tours, custom travel packages and unforgettable adventures." />
-  <meta property="og:image" content="assets/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vagabond Vibes — Tours & Travel" />
-  <meta name="twitter:description" content="Curated tours, custom travel packages and unforgettable adventures." />
-  <meta name="twitter:image" content="assets/logo.png" />
-
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Vagabond Vibes",
-    "url": "https://your-domain.example/",
-    "logo": "https://your-domain.example/assets/logo.png",
-    "image": "https://your-domain.example/assets/logo.png",
-    "description": "Vagabond Vibes provides curated tours, custom travel packages and unforgettable adventures.",
-    "telephone": "+1-555-555-5555",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Explorer Lane",
-      "addressLocality": "Your City",
-      "addressRegion": "Your Region",
-      "postalCode": "00000",
-      "addressCountry": "Country"
-    },
-    "sameAs": [
-       "https://www.instagram.com/yourprofile",
-       "https://www.facebook.com/yourpage"
-    ]
-  }
-  </script>
-
-  <!-- Performance: use a small stylesheet, system fonts to avoid external requests -->
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagabond Vibes - Where Every Journey Feels Like Paradise</title>
+    <meta name="description" content="Your trusted travel partner in Kolkata and Andaman for tour packages, hotel bookings, flight tickets, and car rentals. Let Vagabond Vibes plan your dream vacation.">
+    <meta name="keywords" content="Vagabond Vibes, Travel Agency Ashoknagar, Tour Packages India, Andaman Tours, Kolkata Travel Agent">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Vagabond Vibes home">
-        <img src="assets/logo.png" alt="Vagabond Vibes logo" width="160" height="160" loading="lazy" />
-      </a>
 
-      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Vagabond Vibes Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
 
-      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-        <ul>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Vagabond Vibes</h1>
+                <p>Where Every Journey Feels Like Paradise</p>
+                <a href="tours.html" class="cta-button">Explore Packages</a>
+            </div>
+        </section>
 
-      <a class="cta" href="#contact">Book Now</a>
-    </div>
-  </header>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-card">
+                    <h3>Tour Package</h3>
+                    <p>Discover curated tour packages for every traveler.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Hotel Booking</h3>
+                    <p>Comfortable and affordable hotel bookings worldwide.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Flight Ticket</h3>
+                    <p>Easy and fast flight ticket bookings, for groups or individuals.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Car Booking</h3>
+                    <p>Convenient car rentals to explore your destination freely.</p>
+                </div>
+            </div>
+        </section>
 
-  <main>
-    <section class="hero" aria-label="Discover new adventures">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Vagabond Vibes</h1>
-          <p class="lead">Curated tours and bespoke travel experiences crafted for the adventurous soul. Explore handpicked destinations, sustainable stays, and local experiences.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="#packages">Explore Packages</a>
-            <a class="btn btn-ghost" href="#destinations">Featured Destinations</a>
-          </div>
+        <section class="featured-tours">
+            <h2>Featured Destinations</h2>
+            <div class="tours-container">
+                <div class="tour-card">
+                    <img src="images/andaman.jpg" alt="Scuba diving in Andaman">
+                    <div class="tour-info">
+                        <h3>Andaman Islands</h3>
+                        <p>Pristine beaches and thrilling water sports await.</p>
+                        <a href="tours.html">View Details</a>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="images/mountain.jpg" alt="Snowy mountain peaks">
+                    <div class="tour-info">
+                        <h3>Himalayan Escapes</h3>
+                        <p>Experience the serene beauty of the mighty Himalayas.</p>
+                        <a href="tours.html">View Details</a>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <img src="images/temple.jpg" alt="Ancient Indian temple">
+                    <div class="tour-info">
+                        <h3>Cultural Heritage</h3>
+                        <p>Explore the rich history and architecture of India.</p>
+                        <a href="tours.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Vagabond Vibes. All Rights Reserved.</p>
+            <p>1 No. P. L. Camp, Ashoknagar, Haripur - 743223, (N) 24 PGS, W.B., India</p>
+            <p>Website: <a href="https://www.vagabondvibes.in">www.vagabondvibes.in</a></p>
         </div>
+    </footer>
 
-        <div class="hero-image" aria-hidden="true">
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp">
-            <img src="assets/hero.jpg" alt="Scenic travel hero image" loading="lazy" width="640" height="420" />
-          </picture>
-        </div>
-      </div>
-    </section>
-
-    <section id="destinations" class="section container">
-      <header class="section-header">
-        <h2>Top Destinations</h2>
-        <p>Discover our most popular trips — beaches, mountains, city escapes, and cultural tours.</p>
-      </header>
-
-      <div class="grid cards">
-        <article class="card" tabindex="0">
-          <img src="assets/dest-beach.jpg" alt="Sunset beach" loading="lazy" />
-          <div class="card-body">
-            <h3>Sunny Coast Escape</h3>
-            <p>7 days of sun-soaked beaches, island-hopping, and local seafood feasts.</p>
-            <a class="card-cta" href="#packages">View Package</a>
-          </div>
-        </article>
-
-        <article class="card" tabindex="0">
-          <img src="assets/dest-mountain.jpg" alt="Mountain vista" loading="lazy" />
-          <div class="card-body">
-            <h3>Highland Treks</h3>
-            <p>Immerse yourself in pristine trails, alpine lakes, and cozy mountain lodges.</p>
-            <a class="card-cta" href="#packages">View Package</a>
-          </div>
-        </article>
-
-        <article class="card" tabindex="0">
-          <img src="assets/dest-city.jpg" alt="City skyline" loading="lazy" />
-          <div class="card-body">
-            <h3>City Culture Trips</h3>
-            <p>Explore historic neighborhoods, culinary tours, and guided museum visits.</p>
-            <a class="card-cta" href="#packages">View Package</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="packages" class="section alt">
-      <div class="container">
-        <header class="section-header">
-          <h2>Popular Packages</h2>
-          <p>Flexible itineraries, transparent pricing, and experienced guides.</p>
-        </header>
-
-        <ul class="package-list">
-          <li class="package">
-            <h3>Essentials — 4 Days</h3>
-            <p class="price">$399</p>
-            <p>Quick getaway to recharge — perfect for a long weekend.</p>
-            <a class="btn btn-sm" href="#contact">Enquire</a>
-          </li>
-          <li class="package">
-            <h3>Explorer — 7 Days</h3>
-            <p class="price">$899</p>
-            <p>Handpicked highlights with guided activities and local cuisine.</p>
-            <a class="btn btn-sm" href="#contact">Enquire</a>
-          </li>
-          <li class="package">
-            <h3>Immersive — 14 Days</h3>
-            <p class="price">$1699</p>
-            <p>Deep dive into culture, nature, and undiscovered destinations.</p>
-            <a class="btn btn-sm" href="#contact">Enquire</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="about" class="section container">
-      <header class="section-header">
-        <h2>About Vagabond Vibes</h2>
-        <p>We craft mindful and memorable travel experiences with local partners and sustainable practices.</p>
-      </header>
-
-      <div class="about-grid">
-        <div>
-          <h3>Our Philosophy</h3>
-          <p>We believe travel should be restorative, respectful, and responsibly run. We support local businesses and avoid overtourism in fragile locations.</p>
-        </div>
-        <div>
-          <h3>Why Choose Us</h3>
-          <ul>
-            <li>Curated local experiences</li>
-            <li>Small group sizes</li>
-            <li>Transparent pricing</li>
-            <li>24/7 traveler support</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="section alt">
-      <div class="container">
-        <header class="section-header">
-          <h2>Traveler Stories</h2>
-        </header>
-
-        <blockquote class="testimonial">
-          <p>"Vagabond Vibes planned the perfect honeymoon — seamless coordination and incredible experiences." — Asha P.</p>
-        </blockquote>
-      </div>
-    </section>
-
-    <section id="contact" class="section container">
-      <header class="section-header">
-        <h2>Contact & Booking</h2>
-        <p>Tell us where you want to go — we'll design the journey.</p>
-      </header>
-
-      <form id="contact-form" class="contact-grid" action="#" method="post" novalidate>
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" id="name" required />
-        </label>
-
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" id="email" required />
-        </label>
-
-        <label>
-          <span>Phone (optional)</span>
-          <input type="tel" name="phone" id="phone" />
-        </label>
-
-        <label class="full">
-          <span>Message</span>
-          <textarea name="message" id="message" rows="5" required></textarea>
-        </label>
-
-        <div class="form-actions full">
-          <button class="btn btn-primary" type="submit">Send Enquiry</button>
-          <p class="form-note">We'll respond within 24 hours. For urgent support call +1-555-555-5555</p>
-        </div>
-
-        <div id="form-status" aria-live="polite" class="form-status"></div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand-inline" href="/">
-          <img src="assets/logo.png" alt="Vagabond Vibes logo" width="120" height="120" loading="lazy"/>
-        </a>
-        <p>Vagabond Vibes — curated tours & travels.</p>
-      </div>
-
-      <nav aria-label="Footer navigation">
-        <ul class="footer-links">
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#packages">Packages</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="contact-info">
-        <p><strong>Email</strong><br><a href="mailto:hello@vagabondvibes.example">hello@vagabondvibes.example</a></p>
-        <p><strong>Phone</strong><br><a href="tel:+15555555555">+1 555 555 5555</a></p>
-      </div>
-    </div>
-
-    <div class="container copyright">
-      <small>&copy; <span id="year"></span> Vagabond Vibes. All rights reserved.</small>
-    </div>
-  </footer>
-
-  <script src="js/main.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
