@@ -86,19 +86,3 @@ footer p { margin-bottom: 0.5rem; }
     .team-container { flex-direction: column; }
 }```
 
----
-
-### **6. `script.js` (JavaScript File)**
-
-```javascript
-const navSlide = () => {
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
-    });
-}
-
-navSlide();
