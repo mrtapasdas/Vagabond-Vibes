@@ -6,13 +6,22 @@
     <title>Vagabond Vibes - Where Every Journey Feels Like Paradise</title>
     <meta name="description" content="Your trusted travel partner in Kolkata and Andaman for tour packages, hotel bookings, flight tickets, and car rentals. Let Vagabond Vibes plan your dream vacation.">
     <meta name="keywords" content="Vagabond Vibes, Travel Agency Ashoknagar, Tour Packages India, Andaman Tours, Kolkata Travel Agent">
+    
+    <!-- This is the critical line that links the CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
     <header>
         <nav>
             <a href="index.html" class="logo">
+                <!-- IMPORTANT: Make sure you have an 'images' folder with 'logo.png' inside it -->
                 <img src="images/logo.png" alt="Vagabond Vibes Logo">
             </a>
             <ul class="nav-links">
@@ -31,15 +40,17 @@
 
     <main>
         <section class="hero">
+            <!-- IMPORTANT: Make sure you have an 'images' folder with 'banner.jpg' inside it -->
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>Vagabond Vibes</h1>
-                <p>Where Every Journey Feels Like Paradise</p>
+                <h1 class="hero-title">Vagabond Vibes</h1>
+                <p class="hero-subtitle">Where Every Journey Feels Like Paradise</p>
                 <a href="tours.html" class="cta-button">Explore Packages</a>
             </div>
         </section>
 
         <section class="services">
-            <h2>Our Services</h2>
+            <h2 class="section-title">Our Services</h2>
             <div class="service-container">
                 <div class="service-card">
                     <h3>Tour Package</h3>
@@ -61,7 +72,7 @@
         </section>
 
         <section class="featured-tours">
-            <h2>Featured Destinations</h2>
+            <h2 class="section-title">Featured Destinations</h2>
             <div class="tours-container">
                 <div class="tour-card">
                     <img src="images/andaman.jpg" alt="Scuba diving in Andaman">
