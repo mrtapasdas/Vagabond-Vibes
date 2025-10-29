@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagabond Vibes - Where Every Journey Feels Like Paradise</title>
-    <meta name="description" content="Your trusted travel partner in Kolkata and Andaman for tour packages, hotel bookings, flight tickets, and car rentals. Let Vagabond Vibes plan your dream vacation.">
-    <meta name="keywords" content="Vagabond Vibes, Travel Agency Ashoknagar, Tour Packages India, Andaman Tours, Kolkata Travel Agent">
+    <title>Vagabond Vibes - Premium Travel Experiences</title>
+    <meta name="description" content="Discover bespoke journeys with Vagabond Vibes. We craft premium tour packages, hotel bookings, and travel services to create your paradise.">
+    <meta name="keywords" content="Vagabond Vibes, Premium Travel, Luxury Tours, Andaman Travel, Kolkata Travel Agency">
     
-    <!-- Corrected relative path for CSS -->
     <link rel="stylesheet" href="./style.css">
-
-    <!-- Google Fonts for better typography -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Volkhov:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header id="main-header">
         <nav>
             <a href="./index.html" class="logo">
                 <img src="./images/logo.png" alt="Vagabond Vibes Logo">
@@ -25,74 +23,115 @@
             <ul class="nav-links">
                 <li><a href="./index.html" class="active">Home</a></li>
                 <li><a href="./tours.html">Tours</a></li>
-                <li><a href="./about.html">About Us</a></li>
+                <li><a href="./about.html">About</a></li>
                 <li><a href="./contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <div class="line"></div><div class="line"></div><div class="line"></div>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title">Vagabond Vibes</h1>
-                <p class="hero-subtitle">Where Every Journey Feels Like Paradise</p>
-                <a href="./tours.html" class="cta-button">Explore Packages</a>
+                <h1 class="animate-on-load">Where Every Journey Feels Like Paradise</h1>
+                <p class="animate-on-load">We design unforgettable travel experiences, tailored just for you.</p>
+                <a href="./tours.html" class="btn btn-primary animate-on-load">Explore Our Tours</a>
             </div>
         </section>
 
-        <section class="services">
-            <h2 class="section-title">Our Services</h2>
-            <div class="service-container">
-                <div class="service-card"><h3>Tour Package</h3><p>Discover curated tour packages for every traveler.</p></div>
-                <div class="service-card"><h3>Hotel Booking</h3><p>Comfortable and affordable hotel bookings worldwide.</p></div>
-                <div class="service-card"><h3>Flight Ticket</h3><p>Easy and fast flight ticket bookings, for groups or individuals.</p></div>
-                <div class="service-card"><h3>Car Booking</h3><p>Convenient car rentals to explore your destination freely.</p></div>
+        <section class="why-choose-us">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Why Travel With Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-box animate-on-scroll">
+                        <img src="./images/icons/tailored.svg" alt="Tailored Itineraries Icon" class="feature-icon">
+                        <h3>Personalized Itineraries</h3>
+                        <p>We craft journeys around your interests, ensuring a unique and personal adventure.</p>
+                    </div>
+                    <div class="feature-box animate-on-scroll">
+                        <img src="./images/icons/expert.svg" alt="Expert Guides Icon" class="feature-icon">
+                        <h3>Expert Local Guides</h3>
+                        <p>Our experienced guides in Kolkata and Andaman bring your destinations to life.</p>
+                    </div>
+                    <div class="feature-box animate-on-scroll">
+                        <img src="./images/icons/support.svg" alt="24/7 Support Icon" class="feature-icon">
+                        <h3>Seamless Support</h3>
+                        <p>From booking to your return, we provide 24/7 support for a worry-free trip.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="featured-tours">
-            <h2 class="section-title">Featured Destinations</h2>
-            <div class="tours-container">
-                <div class="tour-card">
-                    <img src="./images/andaman.jpg" alt="Scuba diving in Andaman">
-                    <div class="tour-info">
-                        <h3>Andaman Islands</h3>
-                        <p>Pristine beaches and thrilling water sports await.</p>
-                        <a href="./tours.html">View Details</a>
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Featured Destinations</h2>
+                <div class="tours-grid">
+                    <div class="tour-card animate-on-scroll">
+                        <img src="./images/andaman.jpg" alt="Scuba diving in Andaman">
+                        <div class="tour-info">
+                            <h3>Andaman Islands</h3>
+                            <p>Dive into pristine blue waters, relax on white sandy beaches, and explore lush tropical forests.</p>
+                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="tour-card animate-on-scroll">
+                        <img src="./images/mountain.jpg" alt="Snowy mountain peaks">
+                        <div class="tour-info">
+                            <h3>Himalayan Escapes</h3>
+                            <p>Witness breathtaking peaks and serene valleys on a spiritual and adventurous journey.</p>
+                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="tour-card animate-on-scroll">
+                        <img src="./images/temple.jpg" alt="Ancient Indian temple">
+                        <div class="tour-info">
+                            <h3>Cultural Heritage</h3>
+                            <p>Immerse yourself in the rich history, vibrant traditions, and architectural marvels of India.</p>
+                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
+                        </div>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="./images/mountain.jpg" alt="Snowy mountain peaks">
-                    <div class="tour-info">
-                        <h3>Himalayan Escapes</h3>
-                        <p>Experience the serene beauty of the mighty Himalayas.</p>
-                        <a href="./tours.html">View Details</a>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="./images/temple.jpg" alt="Ancient Indian temple">
-                    <div class="tour-info">
-                        <h3>Cultural Heritage</h3>
-                        <p>Explore the rich history and architecture of India.</p>
-                        <a href="./tours.html">View Details</a>
-                    </div>
-                </div>
+            </div>
+        </section>
+
+        <section class="cta-block">
+            <div class="container">
+                <h2 class="animate-on-scroll">Ready For Your Next Adventure?</h2>
+                <p class="animate-on-scroll">Let us craft the perfect getaway for you. Get in touch with our travel experts today.</p>
+                <a href="./contact.html" class="btn btn-primary animate-on-scroll">Contact Us</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Vagabond Vibes. All Rights Reserved.</p>
-            <p>1 No. P. L. Camp, Ashoknagar, Haripur - 743223, (N) 24 PGS, W.B., India</p>
-            <p>Website: www.vagabondvibes.in</p>
-        </div>
+       <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="./images/logo.png" alt="Vagabond Vibes Logo" class="footer-logo">
+                    <p>Crafting paradise-like journeys since our inception. Your dream vacation starts here.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./tours.html">Tours</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>Tapas (Kolkata): 9531671758</p>
+                    <p>Raju (Andaman): 9679508300</p>
+                    <p>contact@vagabondvibes.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vagabond Vibes. All Rights Reserved. Designed with care.</p>
+            </div>
+       </div>
     </footer>
 
     <script src="./script.js"></script>
