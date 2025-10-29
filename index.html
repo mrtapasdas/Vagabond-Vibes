@@ -3,137 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vagabond Vibes - Premium Travel Experiences</title>
-    <meta name="description" content="Discover bespoke journeys with Vagabond Vibes. We craft premium tour packages, hotel bookings, and travel services to create your paradise.">
-    <meta name="keywords" content="Vagabond Vibes, Premium Travel, Luxury Tours, Andaman Travel, Kolkata Travel Agency">
-    
-    <link rel="stylesheet" href="./style.css">
-    
+    <title>Vagabond Vibes - Andaman Tour Packages</title>
+    <meta name="description" content="Explore the best of Andaman with Vagabond Vibes. We offer customized tour packages including flights, hotels, and activities. Book your dream Andaman holiday today!">
+    <meta name="keywords" content="Andaman tour packages, Andaman travel agency, Andaman honeymoon tour, Port Blair sightseeing, Havelock Island trip, Andaman travel guide, Andaman family package, Andaman tourism, Vagabond Vibes Andaman tours">
+    <meta name="author" content="Vagabond Vibes">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Vagabond Vibes - Your Gateway to Andaman">
+    <meta property="og:description" content="Customized Andaman & Nicobar tour packages.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header id="main-header">
-        <nav>
-            <a href="./index.html" class="logo">
-                <img src="./images/logo.png" alt="Vagabond Vibes Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="./index.html" class="active">Home</a></li>
-                <li><a href="./tours.html">Tours</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">Vagabond Vibes</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="packages.html" class="nav-link">Packages</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <div class="line"></div><div class="line"></div><div class="line"></div>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="animate-on-load">Where Every Journey Feels Like Paradise</h1>
-                <p class="animate-on-load">We design unforgettable travel experiences, tailored just for you.</p>
-                <a href="./tours.html" class="btn btn-primary animate-on-load">Explore Our Tours</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Explore Andaman with Vagabond Vibes</h1>
+            <p class="hero-subtitle">Curated tour packages that turn your island dreams into reality.</p>
+            <div class="hero-buttons">
+                <a href="packages.html" class="btn btn-primary">Explore Packages</a>
+                <a href="contact.html" class="btn btn-secondary">Get a Free Quote</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="why-choose-us">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">Why Travel With Us?</h2>
-                <div class="features-grid">
-                    <div class="feature-box animate-on-scroll">
-                        <img src="./images/icons/tailored.svg" alt="Tailored Itineraries Icon" class="feature-icon">
-                        <h3>Personalized Itineraries</h3>
-                        <p>We craft journeys around your interests, ensuring a unique and personal adventure.</p>
-                    </div>
-                    <div class="feature-box animate-on-scroll">
-                        <img src="./images/icons/expert.svg" alt="Expert Guides Icon" class="feature-icon">
-                        <h3>Expert Local Guides</h3>
-                        <p>Our experienced guides in Kolkata and Andaman bring your destinations to life.</p>
-                    </div>
-                    <div class="feature-box animate-on-scroll">
-                        <img src="./images/icons/support.svg" alt="24/7 Support Icon" class="feature-icon">
-                        <h3>Seamless Support</h3>
-                        <p>From booking to your return, we provide 24/7 support for a worry-free trip.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/your-whatsapp-number" class="whatsapp-float" target="_blank">
+        <img src="images/whatsapp-icon.svg" alt="Chat on WhatsApp">
+    </a>
 
-        <section class="featured-tours">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">Featured Destinations</h2>
-                <div class="tours-grid">
-                    <div class="tour-card animate-on-scroll">
-                        <img src="./images/andaman.jpg" alt="Scuba diving in Andaman">
-                        <div class="tour-info">
-                            <h3>Andaman Islands</h3>
-                            <p>Dive into pristine blue waters, relax on white sandy beaches, and explore lush tropical forests.</p>
-                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="tour-card animate-on-scroll">
-                        <img src="./images/mountain.jpg" alt="Snowy mountain peaks">
-                        <div class="tour-info">
-                            <h3>Himalayan Escapes</h3>
-                            <p>Witness breathtaking peaks and serene valleys on a spiritual and adventurous journey.</p>
-                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="tour-card animate-on-scroll">
-                        <img src="./images/temple.jpg" alt="Ancient Indian temple">
-                        <div class="tour-info">
-                            <h3>Cultural Heritage</h3>
-                            <p>Immerse yourself in the rich history, vibrant traditions, and architectural marvels of India.</p>
-                            <a href="./tours.html" class="btn btn-secondary">Learn More</a>
-                        </div>
-                    </div>
+    <!-- Featured Packages Section -->
+    <section class="featured-packages">
+        <h2 class="section-title">Popular Tour Packages</h2>
+        <div class="packages-grid">
+            <!-- Package Card 1 -->
+            <div class="package-card">
+                <img src="images/andaman-1.jpg" alt="Andaman Honeymoon Package" class="package-image">
+                <div class="package-info">
+                    <h3 class="package-title">Andaman Honeymoon Special</h3>
+                    <p class="package-duration">6 Days / 5 Nights</p>
+                    <p class="package-price">Starting from $499</p>
+                    <a href="#" class="btn btn-details">View Details</a>
                 </div>
             </div>
-        </section>
+            <!-- Package Card 2 -->
+            <div class="package-card">
+                <img src="images/andaman-2.jpg" alt="Andaman Family Fun" class="package-image">
+                <div class="package-info">
+                    <h3 class="package-title">Andaman Family Fun</h3>
+                    <p class="package-duration">5 Days / 4 Nights</p>
+                    <p class="package-price">Starting from $399</p>
+                    <a href="#" class="btn btn-details">View Details</a>
+                </div>
+            </div>
+            <!-- Package Card 3 -->
+            <div class="package-card">
+                <img src="images/andaman-3.jpg" alt="Andaman Adventure Trip" class="package-image">
+                <div class="package-info">
+                    <h3 class="package-title">Andaman Adventure Trip</h3>
+                    <p class="package-duration">7 Days / 6 Nights</p>
+                    <p class="package-price">Starting from $599</p>
+                    <a href="#" class="btn btn-details">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="cta-block">
-            <div class="container">
-                <h2 class="animate-on-scroll">Ready For Your Next Adventure?</h2>
-                <p class="animate-on-scroll">Let us craft the perfect getaway for you. Get in touch with our travel experts today.</p>
-                <a href="./contact.html" class="btn btn-primary animate-on-scroll">Contact Us</a>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"An unforgettable experience! Vagabond Vibes planned our Andaman trip perfectly. Highly recommended!"</p>
+                <h4>- Sarah & Tom</h4>
             </div>
-        </section>
-    </main>
-
-    <footer>
-       <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="./images/logo.png" alt="Vagabond Vibes Logo" class="footer-logo">
-                    <p>Crafting paradise-like journeys since our inception. Your dream vacation starts here.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./tours.html">Tours</a></li>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <p>Tapas (Kolkata): 9531671758</p>
-                    <p>Raju (Andaman): 9679508300</p>
-                    <p>contact@vagabondvibes.in</p>
-                </div>
+            <div class="testimonial">
+                <p>"The best travel agency for Andaman tours. Everything was seamless, from flights to local tours."</p>
+                <h4>- The Sharma Family</h4>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Vagabond Vibes. All Rights Reserved. Designed with care.</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="packages.html">Packages</a>
+                <a href="contact.html">Contact</a>
             </div>
-       </div>
+            <div class="footer-social">
+                <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+            </div>
+            <p>&copy; 2025 Vagabond Vibes | Designed by Tapas Das</p>
+        </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="js/script.js"></script>
 </body>
-</html>
+</html>```
+
+---
+
+### **CSS (`css/style.css`)**
+
+```css
+/* CSS Variables */
+:root {
+    --gold: #D4A017;
+    --teal-blue: #008C9E;
+    --off-white: #FAF9F6;
+    --charcoal-gray: #2E2E2E;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Lato', sans-serif;
+    --highlight-font: 'Playfair Display', serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--off-white);
+    color: var(--charcoal-gray);
+    line-height: 1.6;
+}
+
+/* Header & Navbar */
+.header {
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: rgba(46, 46, 46, 0.9);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold);
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-family: var(--heading-font);
+    font-size: 3.5rem;
+}
+
+.hero-subtitle {
+    font-family: var(--highlight-font);
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--teal-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #006b7a;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold);
+    color: white;
+}
+
+
+/* Featured Packages */
+.featured-packages {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.package-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.package-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.package-info {
+    padding: 1.5rem;
+}
+
+.package-title {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    color: var(--charcoal-gray);
+}
+
+.btn-details {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--teal-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--charcoal-gray);
+    color: var(--off-white);
+    padding: 2rem;
+    text-align: center;
+}
