@@ -241,36 +241,35 @@ p {
     box-shadow: var(--shadow-md);
 }
 
-/* Update this section in styles.css */
+/* Header Padding adjusted for bigger logo */
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0; /* Reduced vertical padding slightly to balance the taller logo */
+    padding: 0.25rem 0; 
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--brand-navy);
+    text-decoration: none;
 }
 
-/* Update this section in styles.css */
+/* UPDATED LOGO: Larger size and sharper rendering */
 .logo img {
-    height: 75px; /* Increased from 50px to make it visible */
+    height: 120px; /* Increased to 120px to stand out */
     width: auto;
     display: block;
     object-fit: contain;
-    /* This ensures the image stays sharp even if resized by the browser */
     image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+    filter: contrast(1.05); /* Slight contrast boost for clarity */
     transition: transform var(--transition-base);
 }
 
 .logo:hover img {
-    transform: scale(1.05); /* Subtle zoom when hovering */
+    transform: scale(1.08); /* More noticeable zoom */
 }
 
 .nav-menu {
@@ -333,7 +332,7 @@ p {
    =================================== */
 
 .hero {
-    padding-top: 120px;
+    padding-top: 140px; /* Increased to avoid overlap with bigger logo */
     padding-bottom: var(--spacing-3xl);
     background: linear-gradient(135deg, #F9FAFB 0%, #EDE9FE 100%);
     position: relative;
@@ -975,9 +974,9 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
-/* Update this section in styles.css */
+/* Larger Footer Logo */
 .footer-logo img {
-    height: 70px; /* Increased from 50px */
+    height: 100px; 
     width: auto;
     margin-bottom: var(--spacing-sm);
 }
@@ -1176,8 +1175,9 @@ p {
         padding: var(--spacing-2xl) 0;
     }
     
+    /* Keep mobile logo reasonably big but balanced */
     .logo img {
-        height: 40px;
+        height: 75px; 
     }
     
     .btn {
@@ -1232,11 +1232,5 @@ p {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-}
-/* Add/Update inside @media (max-width: 480px) */
-@media (max-width: 480px) {
-    .logo img {
-        height: 55px; /* Slightly smaller for mobile phones */
     }
 }
