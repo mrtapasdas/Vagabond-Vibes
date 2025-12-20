@@ -231,45 +231,50 @@ p {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98); /* Increased opacity */
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
+    min-height: 100px; /* Force room for big logo */
+    display: flex;
+    align-items: center;
 }
 
 .header.scrolled {
     box-shadow: var(--shadow-md);
+    min-height: 80px;
 }
 
-/* Header Padding adjusted for bigger logo */
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.25rem 0; 
+    padding: 5px 0; 
+    width: 100%;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    text-decoration: none;
+    display: block !important;
+    overflow: visible !important;
 }
 
-/* UPDATED LOGO: Larger size and sharper rendering */
+/* --- THE LOGO FIX --- */
 .logo img {
-    height: 120px; /* Increased to 120px to stand out */
-    width: auto;
-    display: block;
-    object-fit: contain;
-    image-rendering: -webkit-optimize-contrast; 
-    image-rendering: crisp-edges;
-    filter: contrast(1.05); /* Slight contrast boost for clarity */
-    transition: transform var(--transition-base);
+    height: 140px !important; /* HUGE SIZE TO ENSURE IT WORKS */
+    width: auto !important;
+    max-width: 300px !important;
+    display: block !important;
+    object-fit: contain !important;
+    image-rendering: -webkit-optimize-contrast !important; 
+    /* This removes padding/empty space if your file has any */
+    transform: scale(1.2); 
+    transform-origin: left center;
+    transition: all 0.3s ease;
 }
 
-.logo:hover img {
-    transform: scale(1.08); /* More noticeable zoom */
+.header.scrolled .logo img {
+    height: 100px !important;
+    transform: scale(1);
 }
 
 .nav-menu {
@@ -279,9 +284,10 @@ p {
 }
 
 .nav-link {
-    font-weight: 500;
+    font-weight: 600; /* Bolder for better visibility */
     color: var(--gray-700);
     position: relative;
+    font-size: 1.1rem;
 }
 
 .nav-link::after {
@@ -332,7 +338,7 @@ p {
    =================================== */
 
 .hero {
-    padding-top: 140px; /* Increased to avoid overlap with bigger logo */
+    padding-top: 180px; /* Pushed down more to avoid overlapping the new big logo */
     padding-bottom: var(--spacing-3xl);
     background: linear-gradient(135deg, #F9FAFB 0%, #EDE9FE 100%);
     position: relative;
@@ -974,10 +980,10 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
-/* Larger Footer Logo */
+/* Forced Footer Logo Size */
 .footer-logo img {
-    height: 100px; 
-    width: auto;
+    height: 120px !important; 
+    width: auto !important;
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1075,7 +1081,7 @@ p {
 }
 
 /* ===================================
-   Responsive Design
+   Responsive Design (MOBILE FIX)
    =================================== */
 
 @media (max-width: 1024px) {
@@ -1096,6 +1102,9 @@ p {
 }
 
 @media (max-width: 768px) {
+    .header { min-height: 80px; }
+    .logo img { height: 80px !important; }
+    
     .nav-menu {
         position: fixed;
         top: 80px;
@@ -1175,9 +1184,10 @@ p {
         padding: var(--spacing-2xl) 0;
     }
     
-    /* Keep mobile logo reasonably big but balanced */
+    /* Mobile Logo */
     .logo img {
-        height: 75px; 
+        height: 70px !important; 
+        transform: scale(1) !important;
     }
     
     .btn {
