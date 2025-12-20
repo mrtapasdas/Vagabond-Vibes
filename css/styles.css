@@ -241,11 +241,12 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Update this section in styles.css */
 .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Reduced vertical padding slightly to balance the taller logo */
 }
 
 .logo {
@@ -257,9 +258,19 @@ p {
     color: var(--brand-navy);
 }
 
+/* Update this section in styles.css */
 .logo img {
-    height: 50px;
+    height: 75px; /* Increased from 50px to make it visible */
     width: auto;
+    display: block;
+    object-fit: contain;
+    /* This ensures the image stays sharp even if resized by the browser */
+    image-rendering: -webkit-optimize-contrast; 
+    transition: transform var(--transition-base);
+}
+
+.logo:hover img {
+    transform: scale(1.05); /* Subtle zoom when hovering */
 }
 
 .nav-menu {
@@ -964,8 +975,11 @@ p {
     margin-bottom: var(--spacing-md);
 }
 
+/* Update this section in styles.css */
 .footer-logo img {
-    height: 50px;
+    height: 70px; /* Increased from 50px */
+    width: auto;
+    margin-bottom: var(--spacing-sm);
 }
 
 .footer-brand p {
@@ -1218,5 +1232,11 @@ p {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+/* Add/Update inside @media (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo img {
+        height: 55px; /* Slightly smaller for mobile phones */
     }
 }
