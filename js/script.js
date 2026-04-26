@@ -103,118 +103,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+// ===================================
+    // WhatsApp Contact Form Submission
     // ===================================
-    // Newsletter Form Submission
-    // ===================================
-    const newsletterForm = document.getElementById('newsletterForm');
+    const whatsappForm = document.getElementById('whatsappForm');
     
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value;
+            const name = document.getElementById('waName').value.trim();
+            const email = document.getElementById('waEmail').value.trim();
+            const message = document.getElementById('waMessage').value.trim();
             
-            // Basic email validation
-            if (validateEmail(email)) {
-                // Show success message
-                showNotification('Thank you for subscribing! Check your email for exclusive travel deals.', 'success');
-                emailInput.value = '';
+            if (name && email && message) {
+                // Format the WhatsApp message with line breaks
+                const whatsappMessage = `*New Inquiry from Website*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Message:* ${message}`;
+                
+                // Vagabond Vibes WhatsApp Number
+                const phoneNumber = '919531671758';
+                
+                // Create the WhatsApp API URL
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+                
+                // Open WhatsApp in a new tab
+                window.open(whatsappUrl, '_blank');
+                
+                // Show success notification and clear form
+                showNotification('Opening WhatsApp to send your message...', 'success');
+                this.reset();
             } else {
-                showNotification('Please enter a valid email address.', 'error');
+                showNotification('Please fill in all fields.', 'error');
             }
         });
     }
-    
-    // Email validation function
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-    
-    // ===================================
-    // Notification System
-    // ===================================
-    function showNotification(message, type = 'success') {
-        // Remove existing notification if any
-        const existingNotification = document.querySelector('.notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-        
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-            <div class="notification-content">
-                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-                <span>${message}</span>
-            </div>
-        `;
-        
-        // Add styles
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: ${type === 'success' ? '#10B981' : '#EF4444'};
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            z-index: 10000;
-            animation: slideInRight 0.3s ease-out;
-            max-width: 400px;
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Remove notification after 5 seconds
-        setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease-out';
-            setTimeout(() => notification.remove(), 300);
-        }, 5000);
-    }
-    
-    // Add notification animations to document
-    if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-            @keyframes slideInRight {
-                from {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slideOutRight {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-            }
-            
-            .notification-content {
-                display: flex;
-                align-items: center;
-                gap: 0.75rem;
-            }
-            
-            .notification-content i {
-                font-size: 1.25rem;
-            }
-        `;
-        document.head.appendChild(style);
-    }
+
     
     // ===================================
     // Intersection Observer for Fade-in Animations
