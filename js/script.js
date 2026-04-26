@@ -261,22 +261,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     const testimonials = [
         {
-            text: "Our trip to Bali organized by Vagabond Vibes was absolutely magical! Every detail was perfectly planned, from the stunning accommodations to the incredible cultural experiences. The team's attention to detail and personalized service made our honeymoon truly unforgettable. We can't wait to book our next adventure with them!",
+            text: "Our trip to Andaman & Nicobar Islands organized by Vagabond Vibes was absolutely magical! Every detail was perfectly planned, from the stunning accommodations to the incredible cultural experiences. The team's attention to detail and personalized service made our honeymoon truly unforgettable. We can't wait to book our next adventure with them!",
             author: "Priya Sharma",
             location: "Mumbai, India",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+            image: "https://images.unsplash.com/photo-1706943262459-3ef6ce03305c?w=200&h=200&fit=crop"
         },
         {
-            text: "Vagabond Vibes exceeded all our expectations! The Thailand tour was perfectly curated with a great mix of adventure, culture, and relaxation. Our guide was knowledgeable and friendly, and every hotel was top-notch. The 24/7 support gave us peace of mind throughout our journey. Highly recommended!",
+            text: "Vagabond Vibes exceeded all our expectations! The Sikkim tour was perfectly curated with a great mix of adventure, culture, and relaxation. Our guide was knowledgeable and friendly, and every hotel was top-notch. The 24/7 support gave us peace of mind throughout our journey. Highly recommended!",
             author: "Rahul Verma",
             location: "Delhi, India",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+            image: "https://images.unsplash.com/photo-1598096969068-7f52cac10c83?w=200&h=200&fit=crop"
         },
         {
-            text: "As a solo traveler, I was initially nervous, but Vagabond Vibes made everything so easy and comfortable. The Maldives package was incredible value for money, and I felt safe and well-cared for throughout. The team helped me create memories that will last a lifetime. Thank you for an amazing experience!",
+            text: "As a solo traveler, I was initially nervous, but Vagabond Vibes made everything so easy and comfortable. The Goa package was incredible value for money, and I felt safe and well-cared for throughout. The team helped me create memories that will last a lifetime. Thank you for an amazing experience!",
             author: "Anjali Patel",
             location: "Bangalore, India",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop"
+            image: "https://images.unsplash.com/photo-1659293554631-d7a38642c5e3?w=200&h=200&fit=crop"
         }
     ];
     
