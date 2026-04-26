@@ -254,7 +254,7 @@ p {
     gap: var(--spacing-sm);
     font-size: 1.5rem;
     font-weight: 700;
-    color: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+    color: linear-gradient(135deg, var(--primary-purple-dark) 100%);
 }
 
 .logo img {
