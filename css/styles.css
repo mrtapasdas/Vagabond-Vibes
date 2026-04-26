@@ -254,7 +254,7 @@ p {
     gap: var(--spacing-sm);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-purple);
+    font-color: var(--primary-purple);
 }
 
 .logo img {
