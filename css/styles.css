@@ -877,63 +877,147 @@ p {
 }
 
 /* ===================================
-   Newsletter Section
+   Contact & Map Section
    =================================== */
-
-.newsletter {
-    background: linear-gradient(135deg, #EDE9FE 0%, #F9FAFB 100%);
-    position: relative;
-    overflow: hidden;
+.contact-section {
+    background: var(--gray-50);
 }
 
-.newsletter::before {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: stretch;
+}
+
+.contact-content {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.contact-info-item .icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--primary-purple);
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
 }
 
-.newsletter-content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+.contact-info-item h4 {
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    color: var(--gray-900);
 }
 
-.newsletter-content h2 {
+.contact-info-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+}
+
+.contact-form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--gray-900);
+}
+
+.form-group {
     margin-bottom: var(--spacing-md);
 }
 
-.newsletter-content p {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-xl);
-}
-
-.newsletter-form {
-    display: flex;
-    gap: var(--spacing-md);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.newsletter-input {
-    flex: 1;
-    padding: 1rem 1.5rem;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--radius-full);
+.form-control {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
     font-size: 1rem;
+    color: var(--gray-900);
     transition: all var(--transition-base);
+    background: var(--white);
 }
 
-.newsletter-input:focus {
+.form-control:focus {
     outline: none;
     border-color: var(--primary-purple);
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-whatsapp {
+    background: #25D366; /* Official WhatsApp Green */
+    color: white;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: var(--radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    margin-top: auto;
+}
+
+.btn-whatsapp:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.contact-map {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    min-height: 500px;
+}
+
+/* Responsive adjustments for Contact */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-map {
+        min-height: 400px;
+    }
 }
 
 /* ===================================
