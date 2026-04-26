@@ -1021,6 +1021,81 @@ p {
     text-align: center;
     color: var(--gray-400);
 }
+/* ===================================
+   New Text Logo Styles
+   =================================== */
+.text-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-navy);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.text-logo span {
+    color: var(--primary-purple);
+    font-weight: 800;
+}
+
+.text-logo i {
+    color: var(--accent-orange);
+    font-size: 1.8rem;
+    transform: rotate(-15deg);
+}
+
+.text-logo-footer {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+.text-logo-footer span {
+    color: var(--primary-purple-light);
+}
+
+.text-logo-footer i {
+    color: var(--accent-yellow);
+    transform: rotate(-15deg);
+}
+
+/* ===================================
+   Destination Button Styles
+   =================================== */
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-block i {
+    font-size: 0.85rem;
+    transition: transform var(--transition-base);
+}
+
+.btn-block:hover i {
+    transform: translateX(4px);
+}
+
+/* Ensure the destination card flex layout pushes the button to the bottom nicely */
+.destination-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 250px); /* Account for image height */
+}
+
+.destination-info p {
+    flex-grow: 1; /* Pushes price and button to the bottom */
+}
 
 /* ===================================
    Animations
