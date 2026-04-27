@@ -317,6 +317,12 @@ p {
     transition: all var(--transition-base);
 }
 
+.mobile-only-item {
+    display: none;
+    margin-top: var(--spacing-lg);
+    width: 100%;
+}
+
 /* ===================================
    Hero Section
    =================================== */
@@ -1182,6 +1188,83 @@ textarea.form-control {
 }
 
 /* ===================================
+   Responsive Design Updates
+   =================================== */
+@media (max-width: 768px) {
+    /* Hide the desktop button in the top bar to save space */
+    .desktop-call-btn {
+        display: none;
+    }
+    
+    /* Show the call button inside the mobile dropdown */
+    .mobile-only-item {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        /* Dynamic height calculation to accommodate header */
+        top: 68px; /* Adjusted to standard mobile header height */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 68px);
+        background: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: var(--spacing-2xl) var(--spacing-xl);
+        box-shadow: var(--shadow-xl);
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother slide */
+        z-index: 999;
+        overflow-y: auto; /* Allow scrolling if menu items exceed screen height */
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* Make mobile menu links larger and easier to tap */
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .nav-link {
+        font-size: 1.25rem;
+        display: inline-block;
+        padding: 0.5rem 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        z-index: 1001; /* Ensure it stays above the menu */
+    }
+    
+    /* Hamburger to X Animation fix */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img { height: 35px; } /* Slightly smaller for very small phones */
+    .text-logo { font-size: 1.2rem; }
+    
+    .nav-menu {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+/* ===================================
    Animations
    =================================== */
 
@@ -1241,40 +1324,6 @@ textarea.form-control {
     }
 }
 
-@media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: var(--white);
-        flex-direction: column;
-        padding: var(--spacing-xl);
-        box-shadow: var(--shadow-xl);
-        transition: left var(--transition-base);
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-    
     .hero-actions {
         flex-direction: column;
     }
