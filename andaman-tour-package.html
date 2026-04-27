@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andaman Paradise Tour | Vagabond Vibes</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237C3AED%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22Arial, sans-serif%22 font-size=%2250%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>VV</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="/" class="logo text-logo">
+                <i class="fas fa-plane-departure" style="color: #7c3aed;"></i><span>Vagabond Vibes</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#destinations" class="nav-link active">Destinations</a></li>
+                <li><a href="/#about" class="nav-link">About Us</a></li>
+                <li><a href="/#services" class="nav-link">Services</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+                <li class="mobile-only-item">
+                    <button class="btn btn-primary btn-block" onclick="window.location.href='tel:+919531671758'">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary desktop-call-btn" onclick="window.location.href='tel:+919531671758'">
+                    <i class="fas fa-phone"></i> Call Us
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section" style="padding-top: 120px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&h=800&fit=crop') center/cover; min-height: 60vh; display: flex; align-items: center; color: white;">
+        <div class="container fade-in-up" style="text-align: center;">
+            <span style="background: var(--primary-purple); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-weight: bold; margin-bottom: 1rem; display: inline-block;">🔥 Hot Deal</span>
+            <h1 style="color: white; font-size: clamp(2.5rem, 6vw, 4.5rem);">Andaman Paradise</h1>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto;">4 Nights / 5 Days of Turquoise Waters and Pristine Beaches</p>
+            <a href="#book-now" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-2xl);">
+                
+                <div class="fade-in-up">
+                    <h2 style="color: var(--primary-purple); border-bottom: 2px solid var(--gray-200); padding-bottom: 1rem;">Tour Overview</h2>
+                    <p style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 2rem;">Dive into turquoise waters and explore pristine white-sand beaches with Vagabond Vibes. From the historic charm of Port Blair to the world-class reefs of Havelock, we curate seamless island adventures for every traveler.</p>
+                    
+                    <h3 style="margin-top: 2rem;"><i class="fas fa-map-marked-alt" style="color: var(--primary-purple);"></i> Itinerary Highlights</h3>
+                    <ul style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
+                            <strong>Day 1:</strong> Arrival at Port Blair & Cellular Jail Visit + Light & Sound Show.
+                        </li>
+                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
+                            <strong>Day 2:</strong> Ferry to Havelock Island & Radhanagar Beach Sunset.
+                        </li>
+                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
+                            <strong>Day 3:</strong> Elephant Beach (Scuba Diving / Snorkeling) & Leisure time.
+                        </li>
+                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
+                            <strong>Day 4:</strong> Morning at Kalapathar Beach, Return Ferry to Port Blair.
+                        </li>
+                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
+                            <strong>Day 5:</strong> Airport drop-off with beautiful memories.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fade-in-up">
+                    <div style="background: var(--white); padding: var(--spacing-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); position: sticky; top: 120px;">
+                        <h3 style="margin-bottom: 0.5rem;">Package Price</h3>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-purple); margin-bottom: 1.5rem;">
+                            ₹19,999 <span style="font-size: 1rem; color: var(--gray-600); font-weight: 500;">/ person</span>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="color: #10B981;"></i> What's Included:</p>
+                            <ul style="color: var(--gray-600); padding-left: 1.5rem; list-style-type: disc;">
+                                <li>4 Nights Accommodation</li>
+                                <li>Daily Breakfast</li>
+                                <li>Airport & Ferry Transfers</li>
+                                <li>Private AC Vehicle for Sightseeing</li>
+                                <li>All Entry Tickets & Permits</li>
+                            </ul>
+                        </div>
+
+                        <div id="book-now" style="border-top: 1px solid var(--gray-200); padding-top: 1.5rem;">
+                            <p style="font-weight: 600; margin-bottom: 1rem;">Ready to book your paradise getaway?</p>
+                            <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                                <input type="text" id="waName" class="form-control" placeholder="Your Name" required>
+                                <input type="email" id="waEmail" class="form-control" placeholder="Your Email" required>
+                                <input type="hidden" id="waMessage" value="Hi! I am interested in booking the Andaman Paradise 4N/5D Package at ₹19,999/person. Please share more details!">
+                                <button type="submit" class="btn btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> Send Inquiry on WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo text-logo-footer">
+                        <i class="fas fa-plane-departure" style="color: #7c3aed;"></i><span>Vagabond Vibes</span>
+                    </div>
+                    <p>Vagabond Vibes is your trusted travel partner, dedicated to creating unforgettable journeys across Southeast Asia and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/#destinations" class="footer-link">Destinations</a></li>
+                        <li><a href="/#about" class="footer-link">About Us</a></li>
+                        <li><a href="/#services" class="footer-link">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#contact" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">FAQs</a></li>
+                        <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-phone"></i> +91 9531671758</li>
+                        <li class="footer-link"><i class="fas fa-envelope"></i> contact@vagabondvibes.in</li>
+                        <li class="footer-link"><i class="fas fa-map-marker-alt"></i> Ashoknagar, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Vagabond Vibes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
