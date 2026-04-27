@@ -120,10 +120,21 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-md);
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
 
 p {
     margin-bottom: var(--spacing-sm);
@@ -290,11 +301,10 @@ p {
     gap: var(--spacing-md);
 }
 
-/* Mobile Only Menu Item (Hidden on Desktop) */
 .mobile-only-item {
     display: none;
-    margin-top: var(--spacing-lg);
     width: 100%;
+    margin-top: var(--spacing-md);
 }
 
 .mobile-menu-toggle {
@@ -311,51 +321,6 @@ p {
     background: var(--gray-900);
     border-radius: 3px;
     transition: all var(--transition-base);
-}
-
-/* ===================================
-   New Text Logo Styles
-   =================================== */
-.text-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--brand-navy);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: -0.5px;
-}
-
-.text-logo span {
-    color: var(--primary-purple);
-    font-weight: 800;
-}
-
-.text-logo i {
-    color: var(--accent-orange);
-    font-size: 1.8rem;
-    transform: rotate(-15deg);
-}
-
-.text-logo-footer {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-}
-
-.text-logo-footer span {
-    color: var(--primary-purple);
-}
-
-.text-logo-footer i {
-    color: var(--accent-yellow);
-    transform: rotate(-15deg);
 }
 
 /* ===================================
@@ -656,7 +621,7 @@ p {
 }
 
 .destination-info p {
-    flex-grow: 1; /* Pushes price and button to the bottom */
+    flex-grow: 1;
 }
 
 .destination-price {
@@ -670,24 +635,6 @@ p {
     font-size: 0.875rem;
     color: var(--gray-600);
     font-weight: 400;
-}
-
-/* Destination Button Styles */
-.btn-block {
-    width: 100%;
-    justify-content: center;
-    margin-top: var(--spacing-md);
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
-}
-
-.btn-block i {
-    font-size: 0.85rem;
-    transition: transform var(--transition-base);
-}
-
-.btn-block:hover i {
-    transform: translateX(4px);
 }
 
 /* ===================================
@@ -1044,7 +991,7 @@ textarea.form-control {
 }
 
 .btn-whatsapp {
-    background: #7C3AED; 
+    background: #7C3AED; /* Official WhatsApp Green Alternative */
     color: white;
     width: 100%;
     justify-content: center;
@@ -1074,6 +1021,16 @@ textarea.form-control {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     min-height: 500px;
+}
+
+/* Responsive adjustments for Contact */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-map {
+        min-height: 400px;
+    }
 }
 
 /* ===================================
@@ -1163,22 +1120,103 @@ textarea.form-control {
 }
 
 /* ===================================
+   New Text Logo Styles
+   =================================== */
+.text-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--brand-navy);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.text-logo span {
+    color: var(--primary-purple);
+    font-weight: 800;
+}
+
+.text-logo i {
+    color: var(--accent-orange);
+    font-size: 1.8rem;
+    transform: rotate(-15deg);
+}
+
+.text-logo-footer {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+.text-logo-footer span {
+    color: var(--primary-purple);
+}
+
+.text-logo-footer i {
+    color: var(--accent-yellow);
+    transform: rotate(-15deg);
+}
+
+/* ===================================
+   Destination Button Styles
+   =================================== */
+.btn-block {
+    width: 100%;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-block i {
+    font-size: 0.85rem;
+    transition: transform var(--transition-base);
+}
+
+.btn-block:hover i {
+    transform: translateX(4px);
+}
+
+/* ===================================
    Animations
    =================================== */
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in-up {
@@ -1186,7 +1224,7 @@ textarea.form-control {
 }
 
 /* ===================================
-   Responsive Design
+   Responsive Design Updates
    =================================== */
 
 @media (max-width: 1024px) {
@@ -1206,17 +1244,8 @@ textarea.form-control {
     }
 }
 
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .contact-map {
-        min-height: 400px;
-    }
-}
-
 @media (max-width: 768px) {
-    /* Hide the desktop button in the top bar to save space */
+    /* Hide the desktop call button to save space in the header */
     .desktop-call-btn {
         display: none;
     }
@@ -1228,7 +1257,8 @@ textarea.form-control {
 
     .nav-menu {
         position: fixed;
-        top: 68px; /* Adjusted to standard mobile header height */
+        /* Adjusted to standard mobile header height */
+        top: 68px; 
         left: -100%;
         width: 100%;
         height: calc(100vh - 68px);
@@ -1240,13 +1270,14 @@ textarea.form-control {
         box-shadow: var(--shadow-xl);
         transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        overflow-y: auto; /* Allow scrolling if menu items exceed screen height */
+        overflow-y: auto; /* Allows scrolling if screen height is small */
     }
     
     .nav-menu.active {
         left: 0;
     }
-
+    
+    /* Make mobile menu links larger and block-level */
     .nav-menu li {
         width: 100%;
         text-align: center;
@@ -1257,16 +1288,17 @@ textarea.form-control {
         font-size: 1.25rem;
         display: inline-block;
         padding: 0.5rem 0;
+        width: 100%;
     }
     
     .mobile-menu-toggle {
         display: flex;
-        z-index: 1001;
+        z-index: 1001; /* Keeps toggle above the dropdown menu */
     }
     
-    /* Hamburger to X Animation fix */
+    /* Hamburger to X Animation */
     .mobile-menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(6px, 6px);
     }
     
     .mobile-menu-toggle.active span:nth-child(2) {
@@ -1300,6 +1332,10 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
     
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-xl);
@@ -1320,9 +1356,9 @@ textarea.form-control {
     }
     
     .logo img {
-        height: 35px; /* Slightly smaller for small phones */
+        height: 35px; /* Scaled slightly for smaller phones */
     }
-    
+
     .text-logo {
         font-size: 1.2rem;
     }
@@ -1331,7 +1367,7 @@ textarea.form-control {
         top: 60px;
         height: calc(100vh - 60px);
     }
-    
+
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
@@ -1345,6 +1381,7 @@ textarea.form-control {
 @media print {
     .header,
     .mobile-menu-toggle,
+    .newsletter,
     .footer {
         display: none;
     }
