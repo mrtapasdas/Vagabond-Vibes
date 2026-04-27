@@ -1191,57 +1191,66 @@ textarea.form-control {
    Responsive Design Updates
    =================================== */
 @media (max-width: 768px) {
-    /* Hide the desktop button in the top bar to save space */
+    /* Hides the top button to save space */
     .desktop-call-btn {
         display: none;
     }
     
-    /* Show the call button inside the mobile dropdown */
+    /* Shows the button inside the dropdown */
     .mobile-only-item {
         display: block;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    /* Standardizes the header height so the menu aligns perfectly below it */
+    .nav {
+        padding: 0.75rem 0; 
     }
 
     .nav-menu {
         position: fixed;
-        /* Dynamic height calculation to accommodate header */
-        top: 68px; /* Adjusted to standard mobile header height */
+        top: 65px; /* Precisely aligns with the bottom of the header */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 68px);
+        height: calc(100vh - 65px);
         background: var(--white);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: var(--spacing-2xl) var(--spacing-xl);
+        padding: 2rem 1.5rem;
+        
+        /* FIX: This stops the desktop spacing from making the mobile menu huge */
+        gap: 0; 
+        
         box-shadow: var(--shadow-xl);
-        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother slide */
+        transition: left 0.4s ease-in-out;
         z-index: 999;
-        overflow-y: auto; /* Allow scrolling if menu items exceed screen height */
+        overflow-y: auto;
     }
     
     .nav-menu.active {
         left: 0;
     }
 
-    /* Make mobile menu links larger and easier to tap */
     .nav-menu li {
         width: 100%;
         text-align: center;
-        margin-bottom: var(--spacing-md);
+        margin: 0.5rem 0; /* Creates even, tight spacing */
     }
 
     .nav-link {
         font-size: 1.25rem;
-        display: inline-block;
-        padding: 0.5rem 0;
+        display: block;
+        padding: 0.5rem;
     }
     
     .mobile-menu-toggle {
         display: flex;
-        z-index: 1001; /* Ensure it stays above the menu */
+        z-index: 1001;
     }
     
-    /* Hamburger to X Animation fix */
+    /* Smooth Hamburger to X Animation */
     .mobile-menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -1251,7 +1260,7 @@ textarea.form-control {
     }
     
     .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(6px, -6px);
     }
 }
 
