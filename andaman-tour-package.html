@@ -12,6 +12,103 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Image Slider Styles */
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin: 2rem 0;
+        }
+        .slider-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1.5rem 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.3);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn:hover { background: var(--primary-purple); }
+        .slider-btn.prev { left: 1rem; }
+        .slider-btn.next { right: 1rem; }
+
+        /* Itinerary Accordion Styles */
+        .itinerary-day {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .day-header {
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: var(--gray-50);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        .day-header:hover { background: #f3ebff; }
+        .day-header i { transition: transform 0.3s; color: var(--primary-purple); }
+        .day-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+            padding: 0 1.25rem;
+        }
+        .day-content p { padding: 1rem 0; color: var(--gray-700); margin: 0; }
+        .itinerary-day.active .day-content { max-height: 500px; }
+        .itinerary-day.active .day-header i { transform: rotate(180deg); }
+        .itinerary-day.active { border-color: var(--primary-purple-light); box-shadow: var(--shadow-sm); }
+        
+        /* List Styles for Exclusions/Inclusions */
+        .feature-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+        .feature-list li { margin-bottom: 0.5rem; color: var(--gray-700); display: flex; gap: 0.75rem; align-items: start; }
+        .feature-list i { margin-top: 5px; }
+    </style>
 </head>
 <body>
     <header class="header" id="header">
@@ -44,75 +141,169 @@
         </nav>
     </header>
 
-    <section class="section" style="padding-top: 120px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&h=800&fit=crop') center/cover; min-height: 60vh; display: flex; align-items: center; color: white;">
+    <section class="section" style="padding-top: 120px; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&h=800&fit=crop') center/cover; min-height: 50vh; display: flex; align-items: center; color: white;">
         <div class="container fade-in-up" style="text-align: center;">
-            <span style="background: var(--primary-purple); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-weight: bold; margin-bottom: 1rem; display: inline-block;">🔥 Hot Deal</span>
-            <h1 style="color: white; font-size: clamp(2.5rem, 6vw, 4.5rem);">Andaman Paradise</h1>
+            <span style="background: var(--primary-purple); padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-weight: bold; margin-bottom: 1rem; display: inline-block; font-size: 0.9rem; letter-spacing: 1px;">PREMIUM PACKAGE</span>
+            <h1 style="color: white; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 0.5rem;">Andaman Paradise</h1>
             <p style="color: rgba(255,255,255,0.9); font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto;">4 Nights / 5 Days of Turquoise Waters and Pristine Beaches</p>
-            <a href="#book-now" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="padding-top: var(--spacing-xl);">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-2xl);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-2xl);">
                 
-                <div class="fade-in-up">
-                    <h2 style="color: var(--primary-purple); border-bottom: 2px solid var(--gray-200); padding-bottom: 1rem;">Tour Overview</h2>
-                    <p style="font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 2rem;">Dive into turquoise waters and explore pristine white-sand beaches with Vagabond Vibes. From the historic charm of Port Blair to the world-class reefs of Havelock, we curate seamless island adventures for every traveler.</p>
-                    
-                    <h3 style="margin-top: 2rem;"><i class="fas fa-map-marked-alt" style="color: var(--primary-purple);"></i> Itinerary Highlights</h3>
-                    <ul style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
-                            <strong>Day 1:</strong> Arrival at Port Blair & Cellular Jail Visit + Light & Sound Show.
-                        </li>
-                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
-                            <strong>Day 2:</strong> Ferry to Havelock Island & Radhanagar Beach Sunset.
-                        </li>
-                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
-                            <strong>Day 3:</strong> Elephant Beach (Scuba Diving / Snorkeling) & Leisure time.
-                        </li>
-                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
-                            <strong>Day 4:</strong> Morning at Kalapathar Beach, Return Ferry to Port Blair.
-                        </li>
-                        <li style="background: var(--gray-50); padding: 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-purple);">
-                            <strong>Day 5:</strong> Airport drop-off with beautiful memories.
-                        </li>
-                    </ul>
-                </div>
+                <style>
+                    @media(min-width: 992px) {
+                        .tour-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+                    }
+                </style>
+                
+                <div class="tour-layout">
+                    <div class="fade-in-up">
+                        <h2 style="color: var(--gray-900); font-size: 2rem;">Tour Overview</h2>
+                        <p style="font-size: 1.1rem; color: var(--gray-700); line-height: 1.8;">
+                            Escape to the exotic Andaman and Nicobar Islands with Vagabond Vibes. This 5-day premium getaway is crafted for those who want to blend historical exploration with pure tropical relaxation. From the moving history of Port Blair to the breathtaking, world-renowned coral reefs of Havelock Island, we handle all the logistics so you can focus on making memories.
+                        </p>
 
-                <div class="fade-in-up">
-                    <div style="background: var(--white); padding: var(--spacing-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); position: sticky; top: 120px;">
-                        <h3 style="margin-bottom: 0.5rem;">Package Price</h3>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-purple); margin-bottom: 1.5rem;">
-                            ₹19,999 <span style="font-size: 1rem; color: var(--gray-600); font-weight: 500;">/ person</span>
+                        <div class="slider-container">
+                            <div class="slider-track" id="tourSlider">
+                                <div class="slide">
+                                    <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&h=400&fit=crop" alt="Radhanagar Beach">
+                                    <div class="slide-caption">Radhanagar Beach, Havelock</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="https://images.unsplash.com/photo-1544550581-5f7ceaf7f992?w=800&h=400&fit=crop" alt="Scuba Diving">
+                                    <div class="slide-caption">Scuba Diving at Elephant Beach</div>
+                                </div>
+                                <div class="slide">
+                                    <img src="https://images.unsplash.com/photo-1620804369062-8147d12f3bc1?w=800&h=400&fit=crop" alt="Cellular Jail">
+                                    <div class="slide-caption">Historic Cellular Jail, Port Blair</div>
+                                </div>
+                            </div>
+                            <button class="slider-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
                         </div>
+
+                        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;"><i class="fas fa-map-marked-alt" style="color: var(--primary-purple);"></i> Detailed Itinerary</h3>
                         
-                        <div style="margin-bottom: 2rem;">
-                            <p style="font-weight: 600; margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="color: #10B981;"></i> What's Included:</p>
-                            <ul style="color: var(--gray-600); padding-left: 1.5rem; list-style-type: disc;">
-                                <li>4 Nights Accommodation</li>
-                                <li>Daily Breakfast</li>
-                                <li>Airport & Ferry Transfers</li>
-                                <li>Private AC Vehicle for Sightseeing</li>
-                                <li>All Entry Tickets & Permits</li>
-                            </ul>
+                        <div class="itinerary-accordion">
+                            <div class="itinerary-day active">
+                                <div class="day-header" onclick="toggleAccordion(this)">
+                                    <span>Day 1: Arrival & Historic Port Blair</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>Welcome to the Andaman Islands! Our representative will receive you at Veer Savarkar Airport and escort you to your premium hotel. After lunch and relaxation, we visit the historic Cellular Jail. In the evening, witness the stirring Light & Sound Show that brings the history of the Indian freedom struggle alive.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="itinerary-day">
+                                <div class="day-header" onclick="toggleAccordion(this)">
+                                    <span>Day 2: Cruise to Havelock & Radhanagar Beach</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>After an early breakfast, board a luxury cruise to Havelock Island. Check into your beachside resort. In the afternoon, we head to Radhanagar Beach (Time Magazine's best beach in Asia) to experience silky white sands, turquoise waters, and a mesmerizing sunset.</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-header" onclick="toggleAccordion(this)">
+                                    <span>Day 3: Elephant Beach Water Sports</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>A day for adventure! Take a speedboat to Elephant Beach, famous for its vibrant coral reefs. Enjoy complimentary snorkeling. You can also opt for Scuba Diving, Sea Walking, or Jet Skiing (extra cost). Return to the hotel in the afternoon for leisure time.</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-header" onclick="toggleAccordion(this)">
+                                    <span>Day 4: Kalapathar Sunrise & Return to Port Blair</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>Wake up early for a drive to Kalapathar Beach to witness a beautiful sunrise against black rocks and blue waters. After breakfast, board the return ferry to Port Blair. Spend the evening shopping for souvenirs at the local Aberdeen Bazaar.</p>
+                                </div>
+                            </div>
+
+                            <div class="itinerary-day">
+                                <div class="day-header" onclick="toggleAccordion(this)">
+                                    <span>Day 5: Departure</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="day-content">
+                                    <p>After breakfast, check out from the hotel. We will drop you at the airport with unforgettable memories of your Vagabond Vibes tropical vacation. Safe travels!</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div id="book-now" style="border-top: 1px solid var(--gray-200); padding-top: 1.5rem;">
-                            <p style="font-weight: 600; margin-bottom: 1rem;">Ready to book your paradise getaway?</p>
-                            <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 1rem;">
-                                <input type="text" id="waName" class="form-control" placeholder="Your Name" required>
-                                <input type="email" id="waEmail" class="form-control" placeholder="Your Email" required>
-                                <input type="hidden" id="waMessage" value="Hi! I am interested in booking the Andaman Paradise 4N/5D Package at ₹19,999/person. Please share more details!">
-                                <button type="submit" class="btn btn-whatsapp">
-                                    <i class="fab fa-whatsapp"></i> Send Inquiry on WhatsApp
-                                </button>
-                            </form>
+                        <div style="margin-top: 3rem; background: #fff8eb; padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-orange);">
+                            <h4 style="color: var(--gray-900); margin-bottom: 0.5rem;"><i class="fas fa-exclamation-circle" style="color: var(--accent-orange);"></i> Need to Know</h4>
+                            <p style="font-size: 0.95rem; margin-bottom: 0;">Ferry timings are subject to weather conditions. Always carry a valid photo ID (Aadhar/Passport). Port Blair flights usually land in the morning and depart in the afternoon.</p>
                         </div>
                     </div>
-                </div>
 
+                    <div class="fade-in-up">
+                        <div style="background: var(--white); padding: var(--spacing-xl); border-radius: var(--radius-xl); box-shadow: var(--shadow-2xl); position: sticky; top: 100px;">
+                            
+                            <h3 style="margin-bottom: 0.5rem;">Package Price</h3>
+                            <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-purple); margin-bottom: 1.5rem;">
+                                ₹19,999 <span style="font-size: 1rem; color: var(--gray-600); font-weight: 500;">/ person</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 1.5rem;">
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; color: var(--gray-900);">Included:</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check-circle" style="color: #10B981;"></i> 4 Nights Premium Hotel Stay</li>
+                                    <li><i class="fas fa-check-circle" style="color: #10B981;"></i> Daily Breakfast</li>
+                                    <li><i class="fas fa-check-circle" style="color: #10B981;"></i> Airport & Luxury Ferry Transfers</li>
+                                    <li><i class="fas fa-check-circle" style="color: #10B981;"></i> Private AC Cab for Sightseeing</li>
+                                </ul>
+
+                                <p style="font-weight: 600; margin-bottom: 0.5rem; margin-top: 1rem; color: var(--gray-900);">Not Included:</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-times-circle" style="color: #EF4444;"></i> Airfare to/from Port Blair</li>
+                                    <li><i class="fas fa-times-circle" style="color: #EF4444;"></i> Lunch & Dinner</li>
+                                    <li><i class="fas fa-times-circle" style="color: #EF4444;"></i> Optional Water Sports (Scuba, Jet Ski)</li>
+                                </ul>
+                            </div>
+
+                            <div style="border-top: 1px solid var(--gray-200); padding-top: 1.5rem;">
+                                <h4 style="margin-bottom: 1rem;">Customize & Book</h4>
+                                <form id="packageBookingForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                                    
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <input type="text" id="pkgName" class="form-control" placeholder="Full Name" required>
+                                    </div>
+                                    
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <input type="tel" id="pkgPhone" class="form-control" placeholder="Phone / WhatsApp Number" required>
+                                    </div>
+
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <div class="form-group" style="margin-bottom: 0;">
+                                            <label for="pkgDate" style="font-size: 0.8rem; color: var(--gray-600); margin-left: 5px;">Travel Date</label>
+                                            <input type="date" id="pkgDate" class="form-control" required>
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 0;">
+                                            <label for="pkgPax" style="font-size: 0.8rem; color: var(--gray-600); margin-left: 5px;">No. of People</label>
+                                            <input type="number" id="pkgPax" class="form-control" placeholder="E.g. 2" min="1" required>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-whatsapp" style="margin-top: 0.5rem;">
+                                        <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Send Inquiry
+                                    </button>
+                                    <p style="font-size: 0.8rem; text-align: center; color: var(--gray-600); margin-top: 0.5rem;">No payment required to inquire.</p>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
@@ -166,5 +357,78 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    <script>
+        // --- 1. Image Slider Logic ---
+        let currentSlide = 0;
+        const track = document.getElementById('tourSlider');
+        const slides = document.querySelectorAll('.slide');
+        
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Optional: Auto-slide every 5 seconds
+        setInterval(() => moveSlide(1), 5000);
+
+        // --- 2. Itinerary Accordion Logic ---
+        function toggleAccordion(element) {
+            // Get the parent .itinerary-day container
+            const dayItem = element.parentElement;
+            
+            // If it's already active, close it
+            if (dayItem.classList.contains('active')) {
+                dayItem.classList.remove('active');
+            } else {
+                // Optional: Close all other tabs first
+                document.querySelectorAll('.itinerary-day').forEach(item => {
+                    item.classList.remove('active');
+                });
+                // Open the clicked one
+                dayItem.classList.add('active');
+            }
+        }
+
+        // --- 3. WhatsApp Booking Form Logic ---
+        document.getElementById('packageBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get values from the new form fields
+            const name = document.getElementById('pkgName').value.trim();
+            const phone = document.getElementById('pkgPhone').value.trim();
+            const date = document.getElementById('pkgDate').value;
+            const pax = document.getElementById('pkgPax').value;
+            
+            // Format date to be readable (Optional)
+            const formattedDate = date ? new Date(date).toLocaleDateString('en-GB') : 'Not specified';
+
+            if (name && phone && date && pax) {
+                // Build the WhatsApp message template
+                const whatsappMessage = 
+`*New Booking Inquiry!* 🌴
+*Package:* Andaman Paradise (4N/5D)
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Travel Date:* ${formattedDate}
+*No. of People:* ${pax}
+
+Hi Vagabond Vibes, I am interested in this package. Please share availability and details.`;
+                
+                // Vagabond Vibes WhatsApp Number
+                const phoneNumber = '919531671758';
+                
+                // URL Encode the message and open WhatsApp
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset form
+                this.reset();
+            } else {
+                alert('Please fill in all details so we can help you better!');
+            }
+        });
+    </script>
 </body>
 </html>
