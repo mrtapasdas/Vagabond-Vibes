@@ -1253,12 +1253,25 @@ textarea.form-control {
         display: block;
     }
     
+    /* Make the top header slightly taller */
+    .nav {
+        padding: 1.25rem 0; 
+    }
+    
+    /* Larger logo on mobile */
+    .logo img {
+        height: 45px; 
+    }
+    .text-logo {
+        font-size: 1.5rem; 
+    }
+    
     .nav-menu {
         position: fixed;
-        top: 68px; /* Adjusted dynamically for exact height */
+        top: 85px; /* Re-adjusted for the new taller header height */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 68px); /* Height spans the remaining window space */
+        height: calc(100vh - 85px); 
         background: var(--white);
         flex-direction: column;
         justify-content: flex-start;
@@ -1277,23 +1290,38 @@ textarea.form-control {
     .nav-menu li {
         width: 100%;
         text-align: center;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-lg); /* More space between menu links */
     }
 
+    /* Much larger, easier-to-read menu links */
     .nav-link {
-        font-size: 1.25rem;
+        font-size: 1.75rem; 
         display: inline-block;
-        padding: 0.5rem 0;
+        padding: 1rem 0;
+    }
+    
+    /* Bigger Call Now button inside mobile menu */
+    .mobile-only-item .btn-block {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.2rem;
     }
     
     .mobile-menu-toggle {
         display: flex;
         z-index: 1001;
+        gap: 6px; /* Increased gap between hamburger lines */
+        padding: 0.75rem; /* Bigger touch target */
     }
     
-    /* Fixed X Animation coordinates */
+    /* Wider and thicker hamburger lines */
+    .mobile-menu-toggle span {
+        width: 30px; 
+        height: 4px; 
+    }
+    
+    /* Adjusted X Animation coordinates for thicker bars */
     .mobile-menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+        transform: rotate(45deg) translate(7px, 7px);
     }
     
     .mobile-menu-toggle.active span:nth-child(2) {
@@ -1301,7 +1329,7 @@ textarea.form-control {
     }
     
     .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+        transform: rotate(-45deg) translate(7px, -7px);
     }
     
     .hero-actions {
@@ -1350,12 +1378,12 @@ textarea.form-control {
         padding: var(--spacing-2xl) 0;
     }
     
+    /* Keep Logo size prominent on small phones */
     .logo img {
-        height: 35px; /* Scaled down slightly to fit small screens */
+        height: 40px; 
     }
-    
     .text-logo { 
-        font-size: 1.2rem; 
+        font-size: 1.3rem; 
     }
     
     .btn {
@@ -1365,8 +1393,13 @@ textarea.form-control {
     
     /* Auto adjust menu height for extra small mobile */
     .nav-menu {
-        top: 60px;
-        height: calc(100vh - 60px);
+        top: 72px; /* Calculated for smaller base padding on 480px screens */
+        height: calc(100vh - 72px);
+    }
+    
+    /* Shrink the huge mobile text just slightly for very small screens to avoid wrapping */
+    .nav-link {
+        font-size: 1.5rem; 
     }
 }
 
