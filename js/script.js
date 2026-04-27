@@ -5,18 +5,19 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-   // ===================================
+    // ===================================
     // Mobile Menu Toggle & Accessibility
     // ===================================
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    // Helper function to toggle menu and handle SEO/Accessibility states
     function toggleMenu() {
         const isActive = mobileMenuToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
         
-        // SEO/Accessibility: Update ARIA attributes
+        // SEO/Accessibility: Update ARIA attributes for screen readers
         mobileMenuToggle.setAttribute('aria-expanded', isActive);
         mobileMenuToggle.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
         
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (navMenu.classList.contains('active')) {
-                toggleMenu(); // Reuse the function to ensure ARIA states reset
+                toggleMenu(); // Reuse the function to ensure ARIA states reset cleanly
             }
         });
     });
@@ -119,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// ===================================
+    // ===================================
     // WhatsApp Contact Form Submission
     // ===================================
     const whatsappForm = document.getElementById('whatsappForm');
@@ -145,16 +146,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Open WhatsApp in a new tab
                 window.open(whatsappUrl, '_blank');
                 
-                // Show success notification and clear form
-                showNotification('Opening WhatsApp to send your message...', 'success');
+                // Note: If you have a custom showNotification function, use it here
+                // showNotification('Opening WhatsApp to send your message...', 'success');
                 this.reset();
             } else {
-                showNotification('Please fill in all fields.', 'error');
+                alert('Please fill in all fields.');
             }
         });
     }
 
-    
     // ===================================
     // Intersection Observer for Fade-in Animations
     // ===================================
@@ -315,11 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Accessibility: Keyboard Navigation
     // ===================================
     document.addEventListener('keydown', function(e) {
-        // ESC key closes mobile menu
+        // ESC key closes mobile menu cleanly via our new helper function
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-            mobileMenuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            toggleMenu();
         }
     });
     
