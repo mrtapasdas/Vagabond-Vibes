@@ -5,30 +5,46 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ===================================
-    // Mobile Menu Toggle
+   // ===================================
+    // Mobile Menu Toggle & Accessibility
     // ===================================
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
     
+    function toggleMenu() {
+        const isActive = mobileMenuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // SEO/Accessibility: Update ARIA attributes
+        mobileMenuToggle.setAttribute('aria-expanded', isActive);
+        mobileMenuToggle.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
+        
+        // Prevent body scrolling when menu is open
+        document.body.style.overflow = isActive ? 'hidden' : '';
+    }
+
     if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
+        mobileMenuToggle.addEventListener('click', toggleMenu);
     }
     
     // Close mobile menu when clicking on a nav link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (navMenu.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                toggleMenu(); // Reuse the function to ensure ARIA states reset
             }
         });
+    });
+
+    // Bug Fix: Reset menu state if user resizes window from mobile to desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
     });
     
     // ===================================
