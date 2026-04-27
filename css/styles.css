@@ -790,7 +790,7 @@ p {
    =================================== */
 
 .testimonials {
-    background: var(--gray-50);
+    background: linear-gradient(135deg, #F9FAFB 0%, #EDE9FE 100%);
 }
 
 .testimonials-container {
