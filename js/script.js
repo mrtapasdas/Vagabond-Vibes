@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Open WhatsApp in a new tab
                 window.open(whatsappUrl, '_blank');
                 
-                // Note: If you have a custom showNotification function, use it here
+                // If you have a custom showNotification function, use it here instead of alert
                 // showNotification('Opening WhatsApp to send your message...', 'success');
                 this.reset();
             } else {
