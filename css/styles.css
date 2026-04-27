@@ -1005,14 +1005,14 @@ textarea.form-control {
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
     margin-top: auto;
 }
 
 .btn-whatsapp:hover {
     background: #6D28D9;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
     color: white;
 }
 
