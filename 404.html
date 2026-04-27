@@ -4,152 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found | Vagabond Vibes</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            padding: 2rem;
-        }
-        
-        .error-container {
-            text-align: center;
-            max-width: 600px;
-        }
-        
-        .error-code {
-            font-size: clamp(6rem, 15vw, 12rem);
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 1rem;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .error-message {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .error-description {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        .error-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-primary {
-            background: #fff;
-            color: #667eea;
-        }
-        
-        .btn-primary:hover {
-            background: #f0f0f0;
-        }
-        
-        .logo {
-            margin-bottom: 2rem;
-        }
-        
-        .logo img {
-            height: 80px;
-            filter: brightness(0) invert(1);
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .error-actions {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237C3AED%22/><text x=%2250%25%22 y=%2250%25%22 font-family=%22Arial, sans-serif%22 font-size=%2250%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22central%22>VV</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="error-container">
-        <div class="logo">
-            <img src="images/logo.png" alt="Vagabond Vibes Logo">
-        </div>
-        
-        <div class="error-code">404</div>
-        
-        <h1 class="error-message">Oops! Lost in Paradise?</h1>
-        
-        <p class="error-description">
-            It seems you've wandered off the beaten path. The page you're looking for doesn't exist, 
-            but don't worry – there are plenty of amazing destinations waiting for you!
-        </p>
-        
-        <div class="error-actions">
-            <a href="/" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                Back to Home
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="/" class="logo text-logo">
+                <i class="fas fa-plane-departure" style="color: #7c3aed;"></i><span>Vagabond Vibes</span>
             </a>
-            <a href="/#destinations" class="btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="10" r="3"></circle>
-                    <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"></path>
-                </svg>
-                Explore Destinations
-            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#destinations" class="nav-link">Destinations</a></li>
+                <li><a href="/#about" class="nav-link">About Us</a></li>
+                <li><a href="/#services" class="nav-link">Services</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+                <li class="mobile-only-item">
+                    <button class="btn btn-primary btn-block" onclick="window.location.href='tel:+919531671758'">
+                        <i class="fas fa-phone"></i> Call Us Now
+                    </button>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary desktop-call-btn" onclick="window.location.href='tel:+919531671758'">
+                    <i class="fas fa-phone"></i> Call Us
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 120px; background: var(--gray-50);">
+        <div class="container fade-in-up">
+            <h1 style="font-size: clamp(6rem, 15vw, 10rem); color: var(--primary-purple); line-height: 1; margin-bottom: 1rem;">404</h1>
+            <h2 style="margin-bottom: 1rem;">Oops! Lost in Paradise?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem auto;">
+                It seems you've wandered off the beaten path. The page you're looking for doesn't exist, 
+                but don't worry – there are plenty of amazing destinations waiting for you!
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="/#destinations" class="btn btn-secondary">
+                    <i class="fas fa-compass"></i> Explore Destinations
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo text-logo-footer">
+                        <i class="fas fa-plane-departure" style="color: #7c3aed;"></i><span>Vagabond Vibes</span>
+                    </div>
+                    <p>Vagabond Vibes is your trusted travel partner, dedicated to creating unforgettable journeys across Southeast Asia and beyond.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/#destinations" class="footer-link">Destinations</a></li>
+                        <li><a href="/#about" class="footer-link">About Us</a></li>
+                        <li><a href="/#services" class="footer-link">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#contact" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">FAQs</a></li>
+                        <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><i class="fas fa-phone"></i> +91 9531671758</li>
+                        <li class="footer-link"><i class="fas fa-envelope"></i> contact@vagabondvibes.in</li>
+                        <li class="footer-link"><i class="fas fa-map-marker-alt"></i> Ashoknagar, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Vagabond Vibes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
