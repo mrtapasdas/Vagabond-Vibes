@@ -1357,6 +1357,11 @@ textarea.form-control {
         padding: var(--spacing-2xl) 0;
     }
     
+    /* FIX: Force the hero section to keep enough top padding to clear the header */
+    .hero {
+        padding-top: 120px; 
+    }
+    
     .text-logo { 
         font-size: 1.4rem; /* Balance out large hero text on small screens */
     }
