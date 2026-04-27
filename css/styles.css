@@ -302,9 +302,9 @@ p {
 }
 
 .mobile-only-item {
-    display: none;
+    display: none; /* Hidden on desktop by default */
+    margin-top: var(--spacing-lg);
     width: 100%;
-    margin-top: var(--spacing-md);
 }
 
 .mobile-menu-toggle {
@@ -991,7 +991,7 @@ textarea.form-control {
 }
 
 .btn-whatsapp {
-    background: #7C3AED; /* Official WhatsApp Green Alternative */
+    background: #7C3AED; 
     color: white;
     width: 100%;
     justify-content: center;
@@ -1021,16 +1021,6 @@ textarea.form-control {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     min-height: 500px;
-}
-
-/* Responsive adjustments for Contact */
-@media (max-width: 992px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .contact-map {
-        min-height: 400px;
-    }
 }
 
 /* ===================================
@@ -1120,7 +1110,7 @@ textarea.form-control {
 }
 
 /* ===================================
-   New Text Logo Styles
+   Text Logo Styles
    =================================== */
 .text-logo {
     font-size: 1.5rem;
@@ -1224,7 +1214,7 @@ textarea.form-control {
 }
 
 /* ===================================
-   Responsive Design Updates
+   Responsive Design
    =================================== */
 
 @media (max-width: 1024px) {
@@ -1244,24 +1234,31 @@ textarea.form-control {
     }
 }
 
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-map {
+        min-height: 400px;
+    }
+}
+
+/* MOBILE FIXES DEPLOYED HERE */
 @media (max-width: 768px) {
-    /* Hide the desktop call button to save space in the header */
     .desktop-call-btn {
         display: none;
     }
     
-    /* Show the call button inside the mobile dropdown */
     .mobile-only-item {
         display: block;
     }
-
+    
     .nav-menu {
         position: fixed;
-        /* Adjusted to standard mobile header height */
-        top: 68px; 
+        top: 68px; /* Adjusted dynamically for exact height */
         left: -100%;
         width: 100%;
-        height: calc(100vh - 68px);
+        height: calc(100vh - 68px); /* Height spans the remaining window space */
         background: var(--white);
         flex-direction: column;
         justify-content: flex-start;
@@ -1270,14 +1267,13 @@ textarea.form-control {
         box-shadow: var(--shadow-xl);
         transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        overflow-y: auto; /* Allows scrolling if screen height is small */
+        overflow-y: auto;
     }
     
     .nav-menu.active {
         left: 0;
     }
     
-    /* Make mobile menu links larger and block-level */
     .nav-menu li {
         width: 100%;
         text-align: center;
@@ -1288,15 +1284,14 @@ textarea.form-control {
         font-size: 1.25rem;
         display: inline-block;
         padding: 0.5rem 0;
-        width: 100%;
     }
     
     .mobile-menu-toggle {
         display: flex;
-        z-index: 1001; /* Keeps toggle above the dropdown menu */
+        z-index: 1001;
     }
     
-    /* Hamburger to X Animation */
+    /* Fixed X Animation coordinates */
     .mobile-menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -1306,7 +1301,7 @@ textarea.form-control {
     }
     
     .mobile-menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(6px, -6px);
     }
     
     .hero-actions {
@@ -1356,21 +1351,22 @@ textarea.form-control {
     }
     
     .logo img {
-        height: 35px; /* Scaled slightly for smaller phones */
-    }
-
-    .text-logo {
-        font-size: 1.2rem;
+        height: 35px; /* Scaled down slightly to fit small screens */
     }
     
-    .nav-menu {
-        top: 60px;
-        height: calc(100vh - 60px);
+    .text-logo { 
+        font-size: 1.2rem; 
     }
-
+    
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
+    }
+    
+    /* Auto adjust menu height for extra small mobile */
+    .nav-menu {
+        top: 60px;
+        height: calc(100vh - 60px);
     }
 }
 
